@@ -10,6 +10,7 @@ class ImportTypes(models.Model):
     _description = 'Import Types Mixin'
 
     name = fields.Char(string='Name', required=True)
+    description = fields.Text(string='Description')
     sequence = fields.Integer(
         string='Sequence',
         default=10,

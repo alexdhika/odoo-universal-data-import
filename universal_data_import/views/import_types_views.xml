@@ -12,6 +12,7 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="description"/>
                         <field name="operation_type"/>
                         <field name="prefix_method"/>
                         <field name="data_source_id" options="{'no_create': True, 'no_open': True}"/>
@@ -78,6 +79,7 @@
             <kanban default_group_by="operation_type" quick_create="false" default_order="sequence">
                 <field name="id"/>
                 <field name="name"/>
+                <field name="description"/>
                 <field name="operation_type"/>
                 <field name="prefix_method"/>
                 <field name="prefix_method_action"/>
@@ -112,6 +114,11 @@
 
                             <!-- Body: Info Badges & Method List -->
                             <div class="o_kanban_record_body">
+                                <t t-if="record.description.raw_value">
+                                    <div class="mb-2 p-2 bg-light border-start border-4 border-primary rounded">
+                                        <field name="description"/>
+                                    </div>
+                                </t>
                                 <!-- Prefix Method Badge -->
                                 <div class="mb-2">
                                     <span class="text-muted fs-6 me-1">Prefix:</span>
